@@ -1,9 +1,7 @@
 export default interface EpisodeInterface {
     id: number;
     name: string;
-    image: {
-        [medium: string]: string
-    },
+    image: '';
     number: number;
     season: number;
     summary: string;

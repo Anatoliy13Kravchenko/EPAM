@@ -1,12 +1,17 @@
 import {combineReducers} from 'redux';
 import show from './ShowReducer';
-import {connectRouter} from 'connected-react-router'
+import {connectRouter} from 'connected-react-router';
+import episode from 'Storage/Reducer/EpisodeReducer';
 
-const createRootReducer = (history) => combineReducers({
+/**
+ * @param history
+ */
+const createRootReducer = history => combineReducers({
     router: connectRouter(history),
-    ...show
+    show,
+    episode,
 });
 
-export type RootState = ReturnType<ReturnType<typeof createRootReducer>>
+export type RootState = ReturnType<ReturnType<typeof createRootReducer>>;
 
-export default createRootReducer
+export default createRootReducer;

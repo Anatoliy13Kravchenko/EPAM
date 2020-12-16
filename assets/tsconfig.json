@@ -11,14 +11,7 @@
     "baseUrl": "./",
     "sourceRoot": "./",
     "paths": {
-      "Data/*": ["./tests/Data/*"],
-      "Faker/*": ["./tests/Faker/*"],
-      "Integration/*": ["./tests/Integration/*"],
-      "Unit/*": ["./tests/Unit/*"],
-
-      "Context/*": ["./src/Context/*"],
-      "Helper/*": ["./src/Helper/*"],
-      "Hook/*": ["./src/Hook/*"],
+      "Constant/*": ["./src/Constant/*"],
       "Type/*": ["./src/Type/*"],
       "View/*": ["./src/View/*"],
       "Routing/*": ["./src/Routing/*"],
@@ -27,7 +20,5 @@
   },
   "exclude": [
     "node_modules",
-    "**/*.test.ts",
-    "**/*.test.tsx"
   ]
 }

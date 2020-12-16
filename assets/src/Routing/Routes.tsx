@@ -1,30 +1,30 @@
-import * as React from "react";
-import ShowPreviewList from "View/Section/Show/ShowPreviewList";
-import Show from "View/Section/Show/Show";
-import Episode from "View/Section/Show/Episod/Episode";
+import * as React from 'react';
+import ShowPreviewList from 'View/Section/Show/ShowPreviewList';
+import Show from 'View/Section/Show/Show';
+import Episode from 'View/Section/Show/Episode/Episode';
 
 export interface RouteInterface {
-    path: string,
-    alias: string,
-    component: React.ReactNode
+    path: string;
+    alias: string;
+    component: React.ReactNode;
 }
 
 const Routes = [
     {
         path: '/',
         alias: 'home',
-        component: <ShowPreviewList/>
+        component: <ShowPreviewList/>,
     },
     {
         path: '/show/girls',
         alias: 'show',
-        component: <Show/>
+        component: <Show/>,
     },
     {
-        path: '/show/:show/episode/:episode',
+        path: '/show/season/:season/episode/:number',
         alias: 'episode',
-        component: <Episode/>
-    },
-]
+        component: <Episode/>,
+    }
+];
 
-export default Routes
+export default Routes;

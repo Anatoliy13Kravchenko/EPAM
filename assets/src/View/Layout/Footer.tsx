@@ -1,5 +1,9 @@
 import * as React from "react";
 
+/**
+ * @const Header
+ * @constructor
+ */
 const Footer = () => {
     return (
         <footer className='s-footer text-info text-center padding-15'>
