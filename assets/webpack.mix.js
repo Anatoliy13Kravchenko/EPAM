@@ -88,15 +88,6 @@ if (process.argv.includes('--server') && !process.argv.includes('--nomap')) {
 if (process.argv.includes('--server') || mix.inProduction()) {
     mix
         /**
-         * Polyfill for IE 11+
-         */
-        // .js([
-        //     'resources/js/polyfills.js',
-        //     'node_modules/whatwg-fetch',
-        //     "node_modules/@babel/polyfill",
-        // ], 'js/polyfills.min.js')
-
-        /**
          * Styles
          */
         .sass('scss/index.scss', 'css/index.min.css')

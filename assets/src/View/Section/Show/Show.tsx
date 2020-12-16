@@ -1,9 +1,9 @@
 import * as React from 'react';
 import CardMedia from '@material-ui/core/CardMedia';
-import { makeStyles } from '@material-ui/core/styles';
-import EpisodePreviewList from 'View/Section/Show/Episod/EpisodePreviewList';
-import { connect } from 'react-redux';
-import { RootState } from 'Storage/Reducer/RootReducer';
+import {makeStyles} from '@material-ui/core/styles';
+import EpisodePreviewList from 'View/Section/Show/Episode/EpisodePreviewList';
+import {connect} from 'react-redux';
+import {RootState} from 'Storage/Reducer/RootReducer';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import CardContent from '@material-ui/core/CardContent';
@@ -37,15 +37,10 @@ const useStyles = makeStyles({
 interface Props {
 }
 
-const Show: React.FC<Props> = connect(({ show: { name, summary, image, episodes, genres, officialSite } }: RootState) => ({
-    name,
-    summary,
-    image,
-    episodes,
-    genres, officialSite,
-}))(({ name, summary, image, episodes, genres, officialSite }) => {
+const Show: React.FC<Props> = connect(({show}: RootState) => ({
+    show,
+}))(({show: {name, summary, image, episodes, genres, officialSite}}) => {
     const classes = useStyles();
-
     return (
         <Card className={classes.root}>
             <Box className={classes.contentBox}>
@@ -59,7 +54,7 @@ const Show: React.FC<Props> = connect(({ show: { name, summary, image, episodes,
                         {name}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p"
-                                dangerouslySetInnerHTML={{ __html: summary }}>
+                                dangerouslySetInnerHTML={{__html: summary}}>
                     </Typography>
                     <div
                         className="text-left text-info margin-top-15">Genres: {genres && (genres as string[]).join(',')}</div>
@@ -81,4 +76,4 @@ const Show: React.FC<Props> = connect(({ show: { name, summary, image, episodes,
     );
 });
 
-export default Show
+export default Show;

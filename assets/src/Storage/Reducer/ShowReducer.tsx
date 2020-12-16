@@ -1,4 +1,4 @@
-import EpisodeInterface from "Type/EpisodeInterface";
+import EpisodeInterface from 'Type/EpisodeInterface';
 
 export interface ShowStateInterface {
     name: string;
@@ -15,8 +15,8 @@ const showState: ShowStateInterface = {
     summary: '',
     genres: [],
     officialSite: '',
-    episodes: []
-}
+    episodes: [],
+};
 
 interface ActionInterface {
     type: string;
@@ -24,23 +24,23 @@ interface ActionInterface {
 }
 
 export default {
-    show(state = showState, {type, show}: ActionInterface): ShowStateInterface {
+    show(state = showState, { type, show }: ActionInterface): ShowStateInterface {
 
         switch (type) {
 
-            case "GET_SHOW":
+            case 'GET_SHOW':
                 return state;
                 break;
 
-            case "UPDATE_SHOW":
+            case 'UPDATE_SHOW':
                 return {
-                    ...show
+                    ...show,
                 };
                 break;
 
-            case "FETCH_SHOW":
+            case 'FETCH_SHOW':
                 return {
-                    ...show
+                    ...show,
                 };
                 break;
 
@@ -48,5 +48,5 @@ export default {
                 return state;
                 break;
         }
-    }
-}
+    },
+};
