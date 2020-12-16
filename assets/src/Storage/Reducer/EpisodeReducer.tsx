@@ -22,8 +22,15 @@ const episodeState: EpisodeStateInterface = {
 interface ActionInterface {
     type: string;
     episode: EpisodeInterface;
+    number: number;
+    season: number;
 }
 
+/**
+ * @param prevState
+ * @param type
+ * @param episode
+ */
 const episode: Reducer<EpisodeStateInterface, ActionInterface> = (prevState = episodeState, { type, episode }): EpisodeStateInterface => pipe(
     identity,
     cond([

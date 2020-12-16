@@ -1,17 +1,31 @@
 import * as React from "react";
-import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {Link} from "react-router-dom";
+import {makeStyles} from "@material-ui/core/styles";
 
+const useStyles = makeStyles({
+    disabled: {
+        cursor: 'default',
+        pointerEvents: 'none',
+        color: 'grey'
+    }
+});
+
+/**
+ * @const Header
+ * @constructor
+ */
 const Header = () => {
+    const classes = useStyles();
     return (
-        <header className="flex justify-center">
-            {/*<Menu open={true}>*/}
-                <MenuItem><Link to="/">Home</Link></MenuItem>
-                <MenuItem onClick={() =>{}}>Account</MenuItem>
-                <MenuItem onClick={() =>{}}>News</MenuItem>
-                <MenuItem onClick={() =>{}}>Contacts</MenuItem>
-            {/*</Menu>*/}
+        <header className='padding-15 flex justify-center'>
+            <MenuItem><Link to="/">Home</Link></MenuItem>
+            <MenuItem className={classes.disabled} onClick={() => {
+            }}>Account</MenuItem>
+            <MenuItem className={classes.disabled} onClick={() => {
+            }}>News</MenuItem>
+            <MenuItem className={classes.disabled} onClick={() => {
+            }}>Contacts</MenuItem>
         </header>
     )
 }

@@ -1,7 +1,7 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import {call, put, takeLatest} from 'redux-saga/effects';
 import EpisodeEnum from 'Constant/EpisodeEnum';
 
-const fetchEpisode = async (season, number) => {
+const fetchEpisode = async ({number, season}) => {
     const URL = `http://api.tvmaze.com/shows/6771/episodebynumber?season=${season}&number=${number}`;
 
     return await fetch(URL).then((response) => {
@@ -9,15 +9,17 @@ const fetchEpisode = async (season, number) => {
     });
 };
 
-function* updateEpisode(action) {
+/**
+ * @param action
+ */
+function* updateEpisode({action}) {
     try {
-        console.log(action)
-        const episode = yield call(() => fetchEpisode(action.season, action.number));
-        const { name, summary, image, runtime } = episode;
-        console.log(episode)
+        const episode = yield call(() => fetchEpisode(action));
+        const {name, summary, image, runtime} = episode;
+
         yield put({
             type: EpisodeEnum.UPDATE_EPISODE,
-            episode: { name, summary, runtime, image: image?.medium, },
+            episode: {name, summary, runtime, image: image?.medium},
         });
     } catch (e) {
         alert(e);
@@ -25,5 +27,5 @@ function* updateEpisode(action) {
 }
 
 export default function* watchEpisodeFetching() {
-    yield takeLatest('FETCH_EPISODE' as any, updateEpisode);
+    yield takeLatest(EpisodeEnum.FETCH_EPISODE as any, updateEpisode);
 }

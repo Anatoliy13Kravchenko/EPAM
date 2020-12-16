@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,10 +7,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import LinkM from '@material-ui/core/Link';
-import { ShowStateInterface } from 'Storage/Reducer/ShowReducer';
-import { RootState } from 'Storage/Reducer/RootReducer';
+import {ShowStateInterface} from 'Storage/Reducer/ShowReducer';
+import {RootState} from 'Storage/Reducer/RootReducer';
 import Rating from '@material-ui/lab/Rating';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
             display: 'flex',
             flexDirection: 'column',
             padding: '15px',
+            paddingBottom: '0'
         },
         contentBox: {
             display: 'flex',
@@ -34,14 +35,32 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         button: {
             width: '100%',
         },
+        link: {
+            width: '100%',
+            display: 'flex',
+        },
+        cardAction: {
+            display: 'flex'
+        }
     })
 );
 
+/**
+ * @interface Props
+ */
 interface Props {
     show: ShowStateInterface;
 }
 
-const ShowPreview: React.FC<Props> = ({ show: { name, summary, image, genres, officialSite } }: RootState) => {
+/**
+ * @param name
+ * @param summary
+ * @param image
+ * @param genres
+ * @param officialSite
+ * @constructor
+ */
+const ShowPreview: React.FC<Props> = ({show: {name, summary, image, genres, officialSite}}: RootState) => {
     const classes = useStyles();
 
     return (
@@ -57,30 +76,32 @@ const ShowPreview: React.FC<Props> = ({ show: { name, summary, image, genres, of
                         {name}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p"
-                                dangerouslySetInnerHTML={{ __html: summary }}>
+                                dangerouslySetInnerHTML={{__html: summary}}>
                     </Typography>
                     <div className="text-left text-info margin-top-15">Genres: {genres && genres.join(',')}</div>
                     <div className={'margin-top-15'}><Rating name="read-only" value={4} readOnly={true}/></div>
                     <div className={'margin-top-15'}>
-                    <LinkM
-                        className={'margin-top-15'}
-                        component="button"
-                        variant="body2"
-                        onClick={() => {
-                        }}
-                    >
-                        {officialSite}
-                    </LinkM></div>
+                        <LinkM
+                            className={'text-left'}
+                            component="button"
+                            variant="body2"
+                            onClick={() => {
+                            }}
+                        >
+                            {officialSite}
+                        </LinkM></div>
                 </CardContent>
             </Box>
-            <CardActions>
-                <Button className={classes.button} size="large" color="primary">
-                    <Link to={{
+            <CardActions className={classes.cardAction}>
+                <Link
+                    className={classes.link}
+                    to={{
                         pathname: '/show/girls',
                     }}>
+                    <Button className={classes.button} size="large" color="primary">
                         Watch
-                    </Link>
-                </Button>
+                    </Button>
+                </Link>
             </CardActions>
         </Card>
     );

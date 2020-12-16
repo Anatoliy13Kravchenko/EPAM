@@ -1,4 +1,12 @@
 import EpisodeInterface from 'Type/EpisodeInterface';
+import {Reducer} from "react";
+import pipe from "ramda/es/pipe";
+import identity from "ramda/es/identity";
+import cond from "ramda/es/cond";
+import equals from "ramda/es/equals";
+import T from "ramda/es/T";
+import always from "ramda/es/always";
+import ShowEnum from "Constant/ShowEnum";
 
 export interface ShowStateInterface {
     name: string;
@@ -23,30 +31,19 @@ interface ActionInterface {
     show: ShowStateInterface;
 }
 
-export default {
-    show(state = showState, { type, show }: ActionInterface): ShowStateInterface {
+/**
+ * @param prevState
+ * @param type
+ * @param show
+ */
+const show: Reducer<ShowStateInterface, ActionInterface> = (prevState = showState, {type, show}): ShowStateInterface => pipe(
+    identity,
+    cond([
+        [equals(ShowEnum.GET_SHOW), () => ({...prevState})],
+        [equals(ShowEnum.FETCH_SHOW), () => ({...show})],
+        [equals(ShowEnum.UPDATE_SHOW), () => ({...show})],
+        [T, always(prevState)]
+    ])
+)(type);
 
-        switch (type) {
-
-            case 'GET_SHOW':
-                return state;
-                break;
-
-            case 'UPDATE_SHOW':
-                return {
-                    ...show,
-                };
-                break;
-
-            case 'FETCH_SHOW':
-                return {
-                    ...show,
-                };
-                break;
-
-            default:
-                return state;
-                break;
-        }
-    },
-};
+export default show

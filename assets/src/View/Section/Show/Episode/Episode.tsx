@@ -38,10 +38,13 @@ const useStyles = makeStyles({
 interface Props {
 }
 
+/**
+ * @const Episode
+ */
 const Episode: React.FC<Props> = connect(({episode}: RootState) => ({
     episode
 }))(({episode: {name, summary, image, runtime}}) => {
-    console.log(name)
+
     const classes = useStyles(),
         {season, number} = useParams<any>(),
         dispatch = useDispatch();

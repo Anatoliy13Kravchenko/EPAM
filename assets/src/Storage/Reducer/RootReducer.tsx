@@ -3,9 +3,12 @@ import show from './ShowReducer';
 import {connectRouter} from 'connected-react-router';
 import episode from 'Storage/Reducer/EpisodeReducer';
 
+/**
+ * @param history
+ */
 const createRootReducer = history => combineReducers({
     router: connectRouter(history),
-    ...show,
+    show,
     episode,
 });
 

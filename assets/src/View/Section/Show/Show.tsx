@@ -24,6 +24,8 @@ const useStyles = makeStyles({
     },
     content: {
         flex: '2 0 300px',
+        textAlign: 'left'
+
     },
     playIcon: {
         height: 300,
@@ -37,6 +39,9 @@ const useStyles = makeStyles({
 interface Props {
 }
 
+/**
+ * @const Show
+ */
 const Show: React.FC<Props> = connect(({show}: RootState) => ({
     show,
 }))(({show: {name, summary, image, episodes, genres, officialSite}}) => {
@@ -59,9 +64,9 @@ const Show: React.FC<Props> = connect(({show}: RootState) => ({
                     <div
                         className="text-left text-info margin-top-15">Genres: {genres && (genres as string[]).join(',')}</div>
                     <div className={'margin-top-15'}><Rating name="read-only" value={4} readOnly={true}/></div>
-                    <div className={'margin-top-15'}>
+                    <div className='margin-top-15 '>
                         <LinkM
-                            className={'margin-top-15'}
+                            className={'text-left'}
                             component="button"
                             variant="body2"
                             onClick={() => {

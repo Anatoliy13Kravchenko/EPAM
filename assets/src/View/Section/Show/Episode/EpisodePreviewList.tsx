@@ -2,8 +2,8 @@ import * as React from 'react';
 import EpisodeInterface from 'Type/EpisodeInterface';
 import addIndex from 'ramda/es/addIndex';
 import map from 'ramda/es/map';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { List, ListSubheader } from '@material-ui/core';
+import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
+import {List, ListSubheader} from '@material-ui/core';
 import pipe from 'ramda/es/pipe';
 import prop from 'ramda/es/prop';
 import range from 'ramda/es/range';
@@ -36,7 +36,12 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     })
 );
 
-const EpisodePreviewList: React.FC<Props> = ({ episodes }) => {
+/**
+ * @const EpisodePreviewList
+ * @param episodes
+ * @constructor
+ */
+const EpisodePreviewList: React.FC<Props> = ({episodes}) => {
     const classes = useStyles();
 
     return (
@@ -55,9 +60,9 @@ const EpisodePreviewList: React.FC<Props> = ({ episodes }) => {
                                         <ListSubheader>{`Season ${sectionId}`}</ListSubheader>
                                         {
                                             pipe(
-                                                filter((episode: EpisodeInterface) => equals(sectionId, prop('season', episode))),
-                                                map((episode) => (
-                                                    <EpisodePreview episode={episode}/>
+                                                filter<EpisodeInterface, any>((episode) => equals(sectionId, prop('season', episode))),
+                                                addIndex<EpisodeInterface>(map)((episode, i) => (
+                                                    <EpisodePreview episode={episode} key={i}/>
                                                 ))
                                             )(episodes)
                                         }
