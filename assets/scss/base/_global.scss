@@ -1,0 +1,216 @@
+// Global Styles
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    color: $color-base;
+    font-family: $font-base;
+    font-size: 16px;
+
+    min-width: 300px;
+
+    // Push footer to bottom
+    display: flex;
+    flex-direction: column;
+
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+}
+
+// Push footer to bottom
+main,
+section {
+    flex: 1 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+
+    &:active,
+    &:focus,
+    &:hover {
+        outline: 0;
+    }
+}
+
+strong,
+b {
+    font-family: $font-base;
+    font-weight: 600;
+}
+
+[type="button"] {
+    cursor: pointer;
+    font-family: $font-base;
+    appearance: none;
+}
+
+input {
+    font-family: $font-base;
+}
+
+// Global Headings
+.head {
+    &-big {
+        font-size: rem(35);
+        line-height: 1.3;
+    }
+
+    &-mid {
+        font-size: rem(25);
+        line-height: 1.3;
+    }
+
+    &-min {
+        font-size: rem(20);
+        line-height: 1.3;
+    }
+
+    // Color state
+    &-light {
+        color: $color-light;
+    }
+
+    &line {
+        line-height: 1.3;
+    }
+}
+
+// Global Wrapper
+.wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    &-read {
+        max-width: 900px;
+    }
+}
+
+// Fullsize section
+.is-fullsize {
+    height: 100%;
+}
+
+// Global States
+.has-overflow,
+.no-scroll {
+    overflow: hidden;
+}
+
+.has-ellipsis {
+    text-overflow: ellipsis;
+}
+
+.has-scrollhover {
+    max-width: 100%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    // Windows fix
+    padding-bottom: 2px;
+}
+
+.has-pointer {
+    cursor: pointer;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.is-disabled {
+    pointer-events: none;
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+.no {
+
+    &-events {
+        pointer-events: none;
+
+        &-children * {
+            pointer-events: none;
+        }
+    }
+
+    &-select {
+        user-select: none;
+    }
+
+    &-padding {
+        padding: 0;
+    }
+
+    &-margin {
+        margin: 0;
+    }
+}
+
+.width {
+
+    &-50 {
+        width: 50%;
+    }
+
+    &-100 {
+        width: 100%;
+    }
+}
+
+.height {
+
+    &-50 {
+        height: 50%;
+    }
+
+    &-100 {
+        height: 100%;
+    }
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+select option {
+    color: $color-base;
+}
+
+*::-moz-focus-inner {
+    border: 0;
+    outline: 0;
+}
+
+input::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+[role=button], a, area, button, input:not([type=range]), label, select, summary, textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}

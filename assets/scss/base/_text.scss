@@ -1,0 +1,126 @@
+// Text color
+.text {
+
+    &-base {
+        color: $color-base;
+    }
+
+    &-success {
+        color: $color-success
+    }
+
+    &-danger {
+        color: $color-danger;
+    }
+
+    &-info {
+        color: $color-info;
+    }
+
+    &-14 {
+        font-size: rem(14);
+    }
+
+    &-16 {
+        font-size: rem(16);
+    }
+
+    &-bold {
+        font-weight: 700;
+    }
+
+    &-thin {
+        font-weight: 300;
+    }
+
+
+
+    &-right {
+        text-align: right;
+    }
+
+    &-left {
+        text-align: left;
+    }
+
+    &-center {
+        text-align: center;
+    }
+
+    &-justify {
+        text-align: justify;
+    }
+
+
+
+    &-uppercase {
+        text-transform: uppercase;
+    }
+
+    &-capitalize {
+        text-transform: capitalize;
+    }
+}
+
+@include tablet {
+    .text {
+
+        &-right-tablet {
+            text-align: right;
+        }
+
+        &-left-tablet {
+            text-align: left;
+        }
+
+        &-center-tablet {
+            text-align: center;
+        }
+
+        &-justify-tablet {
+            text-align: justify;
+        }
+    }
+}
+
+@include tablet-land {
+    .text {
+
+        &-right-tablet-land {
+            text-align: right;
+        }
+
+        &-left-tablet-land {
+            text-align: left;
+        }
+
+        &-center-tablet-land {
+            text-align: center;
+        }
+
+        &-justify-tablet-land {
+            text-align: justify;
+        }
+    }
+}
+
+@include desktop {
+    .text {
+
+        &-right-desktop {
+            text-align: right;
+        }
+
+        &-left-desktop {
+            text-align: left;
+        }
+
+        &-center-desktop {
+            text-align: center;
+        }
+
+        &-justify-desktop {
+            text-align: justify;
+        }
+    }
+}

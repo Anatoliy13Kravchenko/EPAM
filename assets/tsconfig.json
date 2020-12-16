@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["dom"],
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "jsx": "react",
+    "allowJs": false,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "sourceRoot": "./",
+    "paths": {
+      "Data/*": ["./tests/Data/*"],
+      "Faker/*": ["./tests/Faker/*"],
+      "Integration/*": ["./tests/Integration/*"],
+      "Unit/*": ["./tests/Unit/*"],
+
+      "Context/*": ["./src/Context/*"],
+      "Helper/*": ["./src/Helper/*"],
+      "Hook/*": ["./src/Hook/*"],
+      "Type/*": ["./src/Type/*"],
+      "View/*": ["./src/View/*"],
+      "Routing/*": ["./src/Routing/*"],
+      "Storage/*": ["./src/Storage/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ]
+}

@@ -1,0 +1,693 @@
+// Flex layout
+.flex {
+    display: flex;
+
+    &.col {
+        flex-direction: column;
+    }
+
+    &.row {
+        flex-direction: row;
+    }
+
+    .self {
+
+        &-center {
+            align-self: center;
+        }
+
+        &-end {
+            align-self: flex-end;
+        }
+
+        &-start {
+            align-self: flex-start;
+        }
+
+        &-baseline {
+            align-self: baseline;
+        }
+    }
+
+    &.justify {
+
+        &-between {
+            justify-content: space-between;
+        }
+
+        &-around {
+            justify-content: space-around;
+        }
+
+        &-center {
+            justify-content: center;
+        }
+
+        &-start {
+            justify-content: flex-start;
+        }
+
+        &-end {
+            justify-content: flex-end;
+        }
+    }
+
+    &.align {
+
+        &-start {
+            align-items: flex-start;
+        }
+
+        &-end {
+            align-items: flex-end;
+        }
+
+        &-center {
+            align-items: center;
+        }
+
+        &-baseline {
+            align-items: baseline;
+        }
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.nowrap {
+        flex-wrap: nowrap;
+    }
+
+    .align {
+
+        &-left {
+            margin-right: auto;
+        }
+
+        &-right {
+            margin-left: auto;
+        }
+
+        &-top {
+            margin-bottom: auto;
+        }
+
+        &-bottom {
+            margin-top: auto;
+        }
+    }
+}
+
+@include tablet {
+
+    .flex {
+
+        &.col-tablet {
+            flex-direction: column;
+        }
+
+        &.row-tablet {
+            flex-direction: row;
+        }
+
+        .self {
+
+            &-center-tablet {
+                align-self: center;
+            }
+
+            &-end-tablet {
+                align-self: flex-end;
+            }
+
+            &-start-tablet {
+                align-self: flex-start;
+            }
+
+            &-baseline-tablet {
+                align-self: baseline;
+            }
+        }
+
+        &.align {
+
+            &-start-tablet {
+                align-items: flex-start;
+            }
+
+            &-end-tablet {
+                align-items: flex-end;
+            }
+
+            &-center-tablet {
+                align-items: center;
+            }
+
+            &-baseline-tablet {
+                align-items: baseline;
+            }
+        }
+
+        &.justify {
+
+            &-between-tablet {
+                justify-content: space-between;
+            }
+
+            &-around-tablet {
+                justify-content: space-around;
+            }
+
+            &-center-tablet {
+                justify-content: center;
+            }
+
+            &-start-tablet {
+                justify-content: flex-start;
+            }
+
+            &-end-tablet {
+                justify-content: flex-end;
+            }
+        }
+
+        &.wrap-tablet {
+            flex-wrap: wrap;
+        }
+
+        &.nowrap-tablet {
+            flex-wrap: nowrap;
+        }
+
+        .align {
+
+            &-left-tablet {
+                margin-right: auto;
+            }
+
+            &-right-tablet {
+                margin-left: auto;
+            }
+
+            &-top-tablet {
+                margin-bottom: auto;
+            }
+
+            &-bottom-tablet {
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@include tablet-land {
+
+    .flex {
+
+        &.col-tablet-land {
+            flex-direction: column;
+        }
+
+        &.row-tablet-land {
+            flex-direction: row;
+        }
+
+        .self {
+
+            &-center-tablet-land {
+                align-self: center;
+            }
+
+            &-end-tablet-land {
+                align-self: flex-end;
+            }
+
+            &-start-tablet-land {
+                align-self: flex-start;
+            }
+
+            &-baseline-tablet-land {
+                align-self: baseline;
+            }
+        }
+
+        &.align {
+
+            &-start-tablet-land {
+                align-items: flex-start;
+            }
+
+            &-end-tablet-land {
+                align-items: flex-end;
+            }
+
+            &-center-tablet-land {
+                align-items: center;
+            }
+
+            &-baseline-tablet-land {
+                align-items: baseline;
+            }
+        }
+
+        &.justify {
+
+            &-between-tablet-land {
+                justify-content: space-between;
+            }
+
+            &-around-tablet-land {
+                justify-content: space-around;
+            }
+
+            &-center-tablet-land {
+                justify-content: center;
+            }
+
+            &-start-tablet-land {
+                justify-content: flex-start;
+            }
+
+            &-end-tablet-land {
+                justify-content: flex-end;
+            }
+        }
+
+        &.wrap-tablet-land {
+            flex-wrap: wrap;
+        }
+
+        &.nowrap-tablet-land {
+            flex-wrap: nowrap;
+        }
+
+        .align {
+
+            &-left-tablet-land {
+                margin-right: auto;
+            }
+
+            &-right-tablet-land {
+                margin-left: auto;
+            }
+
+            &-top-tablet-land {
+                margin-bottom: auto;
+            }
+
+            &-bottom-tablet-land {
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@include desktop {
+
+    .flex {
+
+        &.col-desktop {
+            flex-direction: column;
+        }
+
+        &.row-desktop {
+            flex-direction: row;
+        }
+
+        .self {
+
+            &-center-desktop {
+                align-self: center;
+            }
+
+            &-end-desktop {
+                align-self: flex-end;
+            }
+
+            &-start-desktop {
+                align-self: flex-start;
+            }
+
+            &-baseline-desktop {
+                align-self: baseline;
+            }
+        }
+
+        &.align {
+
+            &-start-desktop {
+                align-items: flex-start;
+            }
+
+            &-end-desktop {
+                align-items: flex-end;
+            }
+
+            &-center-desktop {
+                align-items: center;
+            }
+
+            &-baseline-desktop {
+                align-items: baseline;
+            }
+        }
+
+        &.justify {
+
+            &-between-desktop {
+                justify-content: space-between;
+            }
+
+            &-around-desktop {
+                justify-content: space-around;
+            }
+
+            &-center-desktop {
+                justify-content: center;
+            }
+
+            &-start-desktop {
+                justify-content: flex-start;
+            }
+
+            &-end-desktop {
+                justify-content: flex-end;
+            }
+        }
+
+        &.wrap-desktop {
+            flex-wrap: wrap;
+        }
+
+        &.nowrap-desktop {
+            flex-wrap: nowrap;
+        }
+
+        .align {
+
+            &-left-desktop {
+                margin-right: auto;
+            }
+
+            &-right-desktop {
+                margin-left: auto;
+            }
+
+            &-top-desktop {
+                margin-bottom: auto;
+            }
+
+            &-bottom-desktop {
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+
+// 12 Columns Grid
+.grid {
+
+    &-row {
+        margin: 0 -15px;
+    }
+
+    &-line {
+        width: 100%;
+    }
+
+    &-center {
+        margin: 0 auto;
+    }
+
+    &-1, &-2, &-3, &-4, &-5, &-6,
+    &-7, &-8, &-9, &-10, &-11, &-12 {
+        flex: 0 0 auto;
+        padding: 0 15px;
+
+        // Timed
+        //border: 1px solid $color-base-light;
+        //text-align: center;
+        //background-color: $color-light;
+        //margin-bottom: 15px;
+    }
+
+    &-1 {
+        flex-basis: 8.33333333%;
+        max-width: 8.33333333%;
+    }
+
+    &-2 {
+        flex-basis: 16.66666667%;
+        max-width: 16.66666667%;
+    }
+
+    &-3 {
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+
+    &-4 {
+        flex-basis: 33.33333333%;
+        max-width: 33.33333333%;
+    }
+
+    &-5 {
+        flex-basis: 41.66666667%;
+        max-width: 41.66666667%;
+    }
+
+    &-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+
+    &-7 {
+        flex-basis: 58.33333333%;
+        max-width: 58.33333333%;
+    }
+
+    &-8 {
+        flex-basis: 66.66666667%;
+        max-width: 66.66666667%;
+    }
+
+    &-9 {
+        flex-basis: 75%;
+        max-width: 75%;
+    }
+
+    &-10 {
+        flex-basis: 83.33333333%;
+        max-width: 83.33333333%;
+    }
+
+    &-11 {
+        flex-basis: 91.66666667%;
+        max-width: 91.66666667%;
+    }
+
+    &-12 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+@include tablet {
+
+    .grid {
+
+        &-1-tablet {
+            flex-basis: 8.33333333%;
+            max-width: 8.33333333%;
+        }
+
+        &-2-tablet {
+            flex-basis: 16.66666667%;
+            max-width: 16.66666667%;
+        }
+
+        &-3-tablet {
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+
+        &-4-tablet {
+            flex-basis: 33.33333333%;
+            max-width: 33.33333333%;
+        }
+
+        &-5-tablet {
+            flex-basis: 41.66666667%;
+            max-width: 41.66666667%;
+        }
+
+        &-6-tablet {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+
+        &-7-tablet {
+            flex-basis: 58.33333333%;
+            max-width: 58.33333333%;
+        }
+
+        &-8-tablet {
+            flex-basis: 66.66666667%;
+            max-width: 66.66666667%;
+        }
+
+        &-9-tablet {
+            flex-basis: 75%;
+            max-width: 75%;
+        }
+
+        &-10-tablet {
+            flex-basis: 83.33333333%;
+            max-width: 83.33333333%;
+        }
+
+        &-11-tablet {
+            flex-basis: 91.66666667%;
+            max-width: 91.66666667%;
+        }
+
+        &-12-tablet {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+@include tablet-land {
+
+    .grid {
+
+        &-1-tablet-land {
+            flex-basis: 8.33333333%;
+            max-width: 8.33333333%;
+        }
+
+        &-2-tablet-land {
+            flex-basis: 16.66666667%;
+            max-width: 16.66666667%;
+        }
+
+        &-3-tablet-land {
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+
+        &-4-tablet-land {
+            flex-basis: 33.33333333%;
+            max-width: 33.33333333%;
+        }
+
+        &-5-tablet-land {
+            flex-basis: 41.66666667%;
+            max-width: 41.66666667%;
+        }
+
+        &-6-tablet-land {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+
+        &-7-tablet-land {
+            flex-basis: 58.33333333%;
+            max-width: 58.33333333%;
+        }
+
+        &-8-tablet-land {
+            flex-basis: 66.66666667%;
+            max-width: 66.66666667%;
+        }
+
+        &-9-tablet-land {
+            flex-basis: 75%;
+            max-width: 75%;
+        }
+
+        &-10-tablet-land {
+            flex-basis: 83.33333333%;
+            max-width: 83.33333333%;
+        }
+
+        &-11-tablet-land {
+            flex-basis: 91.66666667%;
+            max-width: 91.66666667%;
+        }
+
+        &-12-tablet-land {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+@include desktop {
+
+    .grid {
+
+        &-1-desktop {
+            flex-basis: 8.33333333%;
+            max-width: 8.33333333%;
+        }
+
+        &-2-desktop {
+            flex-basis: 16.66666667%;
+            max-width: 16.66666667%;
+        }
+
+        &-3-desktop {
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+
+        &-4-desktop {
+            flex-basis: 33.33333333%;
+            max-width: 33.33333333%;
+        }
+
+        &-5-desktop {
+            flex-basis: 41.66666667%;
+            max-width: 41.66666667%;
+        }
+
+        &-6-desktop {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+
+        &-7-desktop {
+            flex-basis: 58.33333333%;
+            max-width: 58.33333333%;
+        }
+
+        &-8-desktop {
+            flex-basis: 66.66666667%;
+            max-width: 66.66666667%;
+        }
+
+        &-9-desktop {
+            flex-basis: 75%;
+            max-width: 75%;
+        }
+
+        &-10-desktop {
+            flex-basis: 83.33333333%;
+            max-width: 83.33333333%;
+        }
+
+        &-11-desktop {
+            flex-basis: 91.66666667%;
+            max-width: 91.66666667%;
+        }
+
+        &-12-desktop {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,106 @@
+// PX to REM
+@function rem($px, $base: 16) {
+    @return #{$px / $base}rem;
+}
+
+// Breakpoints
+@mixin phone() {
+    @media (min-width: 544px) {
+        @content;
+    }
+}
+
+@mixin phone-land() {
+    @media (min-width: 544px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet-land() {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin desktop-large() {
+    @media (min-width: 1400px) {
+        @content;
+    }
+}
+
+// Breakpoints max
+@mixin max-phone() {
+    @media (max-width: 544px) {
+        @content;
+    }
+}
+
+@mixin max-phone-land() {
+    @media (max-width: 544px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin max-tablet() {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin max-tablet-land() {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin max-desktop() {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin max-desktop-large() {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+
+// Only Mozilla
+@mixin mozilla() {
+    @-moz-document url-prefix() {
+        @content;
+    }
+}
+
+// Only Webkit
+@mixin webkit() {
+    @media (-webkit-min-device-pixel-ratio: 0) {
+        @content;
+    }
+}
+
+// Only Safari
+@mixin safari() {
+    &:not(:root:root) {
+        @content;
+    }
+}
+
+// Only IE
+@mixin ie() {
+    @media all and (-ms-high-contrast:none) {
+        @content;
+    }
+}
